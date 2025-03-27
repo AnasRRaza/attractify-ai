@@ -1,6 +1,7 @@
 import { Toaster } from 'react-hot-toast';
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
+import { ThemeProvider } from 'next-themes';
 
 import QueryProvider from '@/components/QueryProvider';
 
@@ -17,10 +18,12 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body className={`${jakartaSans.variable} antialiased`}>
-        <Toaster />
-        <QueryProvider>{children}</QueryProvider>
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+          <Toaster />
+          <QueryProvider>{children}</QueryProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

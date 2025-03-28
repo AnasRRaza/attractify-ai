@@ -19,7 +19,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={`${jakartaSans.variable} antialiased`}>
+      <body className={`${jakartaSans.variable} antialiased dark:bg-[#0A0C0F]`}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <Toaster />
           <QueryProvider>{children}</QueryProvider>

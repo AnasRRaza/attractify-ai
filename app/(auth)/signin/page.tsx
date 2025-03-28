@@ -1,8 +1,14 @@
 'use client';
 import React from 'react';
 
+import AuthWrapper from '@/components/AuthWrapper';
+
 const Signin = () => {
-  return <h1>Signin</h1>;
+  return (
+    <div>
+      <AuthWrapper />
+    </div>
+  );
 };
 
 export default Signin;
